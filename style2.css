@@ -3,13 +3,17 @@
     height:100px;
     color:black;
     border: 1px solid black;
+    text-align: center;
+    
     
 }
-#kontener1{
+#kontener1, #kontener2{
 display: grid;
 grid-template-columns: repeat(7, 100px);
 
 justify-content: start;
+margin-top:10px;
+
 
 }
 #koncowka{
@@ -19,4 +23,19 @@ img{
     display:none;
     width:150px;
     height:50px;
+    padding-left:30px;
+   
+}
+p{
+    float:left;
+    
+}
+
+@media print {
+  /* Upewnij się, że drugi kontener zaczyna się od nowej strony */
+  #kontener2 {
+    break-before: page;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }

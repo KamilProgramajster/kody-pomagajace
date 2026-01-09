@@ -55,7 +55,7 @@ function drukarz(){
     document.getElementById("zatwierdzacz").style.display="none";
     document.getElementById("dodrukarz").style.display="none";
     document.getElementById("kontener").style.display="none";
-    document.getElementById("").style.display="block";
+    document.getElementById("logo").style.display="block";
     var liczba_okien1 = baza1.length;
     var liczba_okien2 = baza1.length;
     var liczydlo = ""; 
@@ -67,6 +67,16 @@ function drukarz(){
     }
     var kontener1 = document.getElementById("kontener1");
     kontener1.innerHTML = liczydlo;
+    liczydlo = "";
+    wartosc_okna = "";
+    for(var i = 0; i < liczba_okien1; i++){
+        wartosc_okna = baza1[i];
+        liczydlo += "<div id='okno'>" + baza2[i] + "</div>";
+
+    }
+    var kontener2 = document.getElementById("kontener2");
+    kontener2.innerHTML = liczydlo;
+
     document.getElementById("koncowka").style.display="block";
 
 

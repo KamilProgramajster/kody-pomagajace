@@ -6,6 +6,7 @@
     text-align: center;
     
     
+    
 }
 #kontener1, #kontener2{
 display: grid;
@@ -30,12 +31,36 @@ p{
     float:left;
     
 }
+.tresc_okna{
+    margin-top:20px;
+    
+    
+
+}
+
+
 
 @media print {
-  /* Upewnij się, że drugi kontener zaczyna się od nowej strony */
-  #kontener2 {
-    break-before: page;
-    margin-top: 0;
-    padding-top: 0;
-  }
+
+
+    #kontener1, #kontener2 {
+        display: grid !important;
+        grid-template-columns: repeat(7, 100px); /* Musi być tyle samo co w zwykłym CSS */
+        gap: 0; 
+        margin: 0;
+    }
+
+    #kontener1 {
+        direction: ltr; /* Strona A: od lewej do prawej */
+    }
+
+    #kontener2 {
+        break-before: page;
+        direction: rtl; /* Strona B: od prawej do lewej (odbicie lustrzane) */
+    }
+
+    .okno {
+        direction: ltr; /* Tekst wewnątrz okna wraca do normalnego kierunku */
+        page-break-inside: avoid;
+    }
 }

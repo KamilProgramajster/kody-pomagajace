@@ -16,8 +16,8 @@ function informator_potwierdzacz() {
     var tekst = ""; 
     for (var i = 1; i <= x; i++) {
         
-        tekst += "<input  maxlength='15' id='a" + i + "' placeholder='Strona A " + i + "'>";
-        tekst += "<input  maxlength='15' id='b" + i + "' placeholder='Strona B " + i + "'>";
+        tekst += "<input  maxlength='41' id='a" + i + "' placeholder='Strona A " + i + "'>";
+        tekst += "<input  maxlength='41' id='b" + i + "' placeholder='Strona B " + i + "'>";
         tekst += "<br>";
     }
     
@@ -62,7 +62,7 @@ function drukarz(){
     var wartosc_okna = "";
     for(var i = 0; i < liczba_okien1; i++){
         wartosc_okna = baza1[i];
-        liczydlo += "<div id='okno'>" + baza1[i] + "</div>";
+        liczydlo += "<div id='okno'><p class='tresc_okna'>" + baza1[i] + "</p></div>";
 
     }
     var kontener1 = document.getElementById("kontener1");
@@ -71,13 +71,14 @@ function drukarz(){
     wartosc_okna = "";
     for(var i = 0; i < liczba_okien1; i++){
         wartosc_okna = baza1[i];
-        liczydlo += "<div id='okno'>" + baza2[i] + "</div>";
+        liczydlo += "<div id='okno'><p class='tresc_okna'>" + baza2[i] + "</p></div>";
 
     }
     var kontener2 = document.getElementById("kontener2");
     kontener2.innerHTML = liczydlo;
 
     document.getElementById("koncowka").style.display="block";
+    
 
 
 

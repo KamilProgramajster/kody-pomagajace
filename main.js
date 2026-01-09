@@ -1,11 +1,14 @@
+
+var x = 0;
+
 function informator_potwierdzacz() {
     
  
 
-    var x = document.getElementById("informator_numerowy").value;
+    x = document.getElementById("informator_numerowy").value;
     var kontener = document.getElementById("kontener");
     
-    if (x > 200) {
+    if (x > 54) {
         alert("Blokada: Podano za wysoką wartość");
         return;
     }
@@ -13,13 +16,13 @@ function informator_potwierdzacz() {
     var tekst = ""; 
     for (var i = 1; i <= x; i++) {
         
-        tekst += "<input id='a" + i + "' placeholder='Strona A " + i + "'>";
-        tekst += "<input id='b" + i + "' placeholder='Strona B " + i + "'>";
+        tekst += "<input  maxlength='15' id='a" + i + "' placeholder='Strona A " + i + "'>";
+        tekst += "<input  maxlength='15' id='b" + i + "' placeholder='Strona B " + i + "'>";
         tekst += "<br>";
     }
     
     
-    tekst += "<button type='button' onclick='zbieracz()'>ZBIERZ DANE</button>";
+    tekst += "<button id='dodrukarz' type='button' onclick='zbieracz()'>ZBIERZ DANE</button>";
     kontener.innerHTML = tekst;
 }
 var baza1 = [];
@@ -38,6 +41,39 @@ function zbieracz() {
     }
     
     
-    alert("Dane zostały zebrane do konsoli (F12)!");
+    
+    drukarz();
+    
 }
-console.log("Zebrane dane:", baza1, baza2);
+
+function drukarz(){
+        for (var i = 1; i <= x; i++) {
+        document.getElementById("a" + i).style.display="none";
+        document.getElementById("b" + i).style.display="none";}
+    document.getElementById("informator").style.display="none";
+    document.getElementById("informator_numerowy").style.display="none";
+    document.getElementById("zatwierdzacz").style.display="none";
+    document.getElementById("dodrukarz").style.display="none";
+    document.getElementById("kontener").style.display="none";
+    document.getElementById("").style.display="block";
+    var liczba_okien1 = baza1.length;
+    var liczba_okien2 = baza1.length;
+    var liczydlo = ""; 
+    var wartosc_okna = "";
+    for(var i = 0; i < liczba_okien1; i++){
+        wartosc_okna = baza1[i];
+        liczydlo += "<div id='okno'>" + baza1[i] + "</div>";
+
+    }
+    var kontener1 = document.getElementById("kontener1");
+    kontener1.innerHTML = liczydlo;
+    document.getElementById("koncowka").style.display="block";
+
+
+
+        
+
+    
+    
+    
+}

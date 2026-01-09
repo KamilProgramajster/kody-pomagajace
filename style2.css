@@ -1,0 +1,22 @@
+#okno{
+    width:100px;
+    height:100px;
+    color:black;
+    border: 1px solid black;
+    
+}
+#kontener1{
+display: grid;
+grid-template-columns: repeat(7, 100px);
+
+justify-content: start;
+
+}
+#koncowka{
+    display:none;
+}
+img{
+    display:none;
+    width:150px;
+    height:50px;
+}
